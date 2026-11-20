@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Palmetto Platinum — GTA VI Trophy Guide &amp; Tracker</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="brand-mark" aria-hidden="true">PP</div>
+    <div class="brand-text">
+      <h1>Palmetto Platinum</h1>
+      <p class="tagline">The offline GTA VI trophy guide &amp; tracker — all 55 PlayStation 5 trophies, every guide in our own words and cited.</p>
+    </div>
+  </div>
+  <div class="overall" aria-label="Overall progress">
+    <div class="overall-numbers"><span id="overallPct">0%</span><span id="overallCount" class="overall-count">0 / 55 earned</span></div>
+    <div class="bar"><div id="overallBar" class="bar-fill"></div></div>
+    <div id="gradeTallies" class="tallies"></div>
+  </div>
+</header>
+
+<nav class="tabs" aria-label="Views">
+  <button type="button" class="tab is-active" data-tab="tracker">Tracker</button>
+  <button type="button" class="tab" data-tab="roadmap">Roadmap to Platinum</button>
+  <button type="button" class="tab" data-tab="missables">Missables</button>
+</nav>
+
+<section id="view-tracker" class="view">
+  <div class="toolbar">
+    <label class="search">
+      <span class="sr-only">Search trophies</span>
+      <input id="searchBox" type="search" placeholder="Search name, description, guide…" autocomplete="off">
+    </label>
+    <div id="kindChips" class="chips" role="group" aria-label="Filter by kind"></div>
+    <label class="select-wrap">Grade
+      <select id="gradeFilter">
+        <option value="all">All grades</option>
+        <option value="platinum">Platinum</option>
+        <option value="gold">Gold</option>
+        <option value="silver">Silver</option>
+        <option value="bronze">Bronze</option>
+      </select>
+    </label>
+    <label class="toggle"><input type="checkbox" id="hideEarned"> Hide earned</label>
+    <label class="toggle"><input type="checkbox" id="shieldToggle"> Spoiler shield</label>
+    <div class="toolbar-actions">
+      <button type="button" id="exportBtn" class="btn">Export</button>
+      <label class="btn" for="importFile">Import</label>
+      <input id="importFile" type="file" accept="application/json,.json" class="sr-only">
+      <button type="button" id="resetBtn" class="btn btn-quiet">Reset</button>
+    </div>
+  </div>
+  <p id="shieldNote" class="shield-note" hidden>Spoiler shield is on: unearned story trophies show as “Hidden trophy” — names and descriptions stay covered until you earn them.</p>
+
+  <div class="layout">
+    <aside class="side">
+      <div class="card facts">
+        <h2>Road to Platinum</h2>
+        <dl>
+          <div><dt>Difficulty</dt><dd>4 / 10</dd></div>
+          <div><dt>Time</dt><dd>≈ 200 hours</dd></div>
+          <div><dt>Playthroughs</dt><dd>1</dd></div>
+          <div><dt>Online trophies</dt><dd>0</dd></div>
+          <div><dt>Missable</dt><dd>1 — in Chapter 1</dd></div>
+          <div><dt>Hidden</dt><dd>28</dd></div>
+        </dl>
+        <p class="facts-note">One playthrough does everything. The single missable is flagged in red wherever it appears.</p>
+      </div>
+      <div class="card">
+        <h2>Phases</h2>
+        <div id="phaseSummary"></div>
+      </div>
+      <div class="card nextup">
+        <h2>Next up</h2>
+        <p id="nextUpText">Loading the guide…</p>
+      </div>
+    </aside>
+
+    <section class="list-wrap">
+      <div id="trophyList" class="trophy-list"></div>
+      <p id="emptyState" class="empty" hidden>No trophies match those filters. Loosen the search or clear a filter to see the full list.</p>
+    </section>
+
+    <article id="detailPanel" class="detail" aria-live="polite"></article>
+  </div>
+</section>
+
+<section id="view-roadmap" class="view" hidden>
+  <div id="roadmapRoot"></div>
+</section>
+
+<section id="view-missables" class="view" hidden>
+  <div id="missablesRoot"></div>
+</section>
+
+<footer class="footer">
+  <p><strong>About this guide.</strong> Trophy names, descriptions and grades are the official PlayStation list, shown as published. Every guide is written for this app and names its sources beside the trophy it belongs to; a source is cited, never copied. Progress is stored only in your browser (localStorage) and can be exported and imported as a file. The app loads nothing from the network.</p>
+  <p class="footer-sources">Principal sources: PlayStation (official list), PowerPyx (roadmap &amp; counts), PSNProfiles and Exophase (published lists), TrueTrophies (list). Full citations sit beside each trophy's guide.</p>
+</footer>
+
+<script type="module" src="main.js"></script>
+</body>
+</html>
